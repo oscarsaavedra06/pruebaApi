@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31727.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HogwartsApi", "HogwartsApi\HogwartsApi.csproj", "{A2E243E5-B29E-49CF-BBB2-788423B9A80B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{31B248A5-55AF-48E2-9E9A-B404F07C9999}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infraestructure", "Infraestructure\Infraestructure.csproj", "{B6DA277B-2FE0-49EA-BBD1-AD358FD1EEA8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A2E243E5-B29E-49CF-BBB2-788423B9A80B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2E243E5-B29E-49CF-BBB2-788423B9A80B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2E243E5-B29E-49CF-BBB2-788423B9A80B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2E243E5-B29E-49CF-BBB2-788423B9A80B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31B248A5-55AF-48E2-9E9A-B404F07C9999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31B248A5-55AF-48E2-9E9A-B404F07C9999}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31B248A5-55AF-48E2-9E9A-B404F07C9999}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31B248A5-55AF-48E2-9E9A-B404F07C9999}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6DA277B-2FE0-49EA-BBD1-AD358FD1EEA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6DA277B-2FE0-49EA-BBD1-AD358FD1EEA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6DA277B-2FE0-49EA-BBD1-AD358FD1EEA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6DA277B-2FE0-49EA-BBD1-AD358FD1EEA8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E38DB0B-45B2-40AD-8E39-78B2C88E5815}
+	EndGlobalSection
+EndGlobal
