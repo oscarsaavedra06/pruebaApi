@@ -7,20 +7,20 @@ namespace Core.Models
         [Key]
         public int Id { get; set; }
 
-        [RegularExpression("[a-zA-Z]",ErrorMessage ="Solo se permite ingresar letras")]
-        [MaxLength(20)]
+        [RegularExpression(@"[\p{L} ]+$", ErrorMessage ="Solo se permite ingresar letras")]
+        [MaxLength(20,ErrorMessage ="El nombre no debe superar los {1} caracteres")]
         public string Nombre { get; set; }
 
-        [RegularExpression("[a-zA-Z]", ErrorMessage = "Solo se permite ingresar letras")]
-        [MaxLength(20)]
+        [RegularExpression(@"[\p{L} ]+$", ErrorMessage = "Solo se permite ingresar letras")]
+        [MaxLength(20, ErrorMessage = "El nombre no debe superar los {1} caracteres")]
         public string Apellido { get; set; }
 
         [RegularExpression("[0-9]", ErrorMessage = "Solo se permite ingresar números")]
-        [MaxLength(10)]
+        
         public int Identificacion { get; set; }
 
         [RegularExpression("[1-4]", ErrorMessage = "Opción no válida")]
-        [MaxLength(1)]
+       
         public int IdCasa { get; set; }
     }
 }
