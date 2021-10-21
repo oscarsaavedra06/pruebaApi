@@ -39,9 +39,16 @@ namespace Infraestructure.Services
             return result > 0;
         }
 
-        public Task<bool> UpdateSolicitudIngreso(SolicitudIngreso entidad)
+        public Task<bool> UpdateSolicitudIngreso(int id, SolicitudIngreso entidad)
         {
-            throw new NotImplementedException();
+            var item = applicationContext.solicitudIngresos.FirstOrDefault(x => x.Id == id);
+            if (item == null) {
+                return Task.Run(()=> false);
+            }
+
+
+            return Task.Run(() => false);
+
         }
     }
 }

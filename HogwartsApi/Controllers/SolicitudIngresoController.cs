@@ -34,10 +34,19 @@ namespace HogwartsApi.Controllers
         }
 
         [HttpPost]
-        public async Task<ApiResponse<bool>> post(SolicitudIngreso entidad)
+        public async Task<ApiResponse<bool>> post(SolicitudIngresoDTO entidad)
         {
-            var result = await repo.InsertSolicitudIngreso(entidad);
+            var solicitud = mapper.Map<SolicitudIngreso>(entidad);
+            var result = await repo.InsertSolicitudIngreso(solicitud);
             var response = new ApiResponse<bool> (result);
+            return response;
+        }
+
+        [HttpPut]
+        public async Task<ApiResponse<bool>> put(int id, SolicitudIngresoDTO entidad)
+        {
+            var result = await repo.InsertSolicitudIngreso(solicitud);
+            var response = new ApiResponse<bool>(result);
             return response;
         }
     }
