@@ -17,9 +17,17 @@ namespace Infraestructure.Services
         {
             this.applicationContext = applicationContext;
         }
-        public Task<bool> DeleteSolicitudIngreso(SolicitudIngreso entidad)
+        public async Task<bool> DeleteSolicitudIngreso(int id)
         {
-            throw new NotImplementedException();
+            var item = applicationContext.solicitudIngresos.FirstOrDefault(x => x.Id == id);
+            if (item != null)
+            {
+                applicationContext.Remove(item);
+                var result= await applicationContext.SaveChangesAsync();
+                return result > 0;
+            }
+
+            return await Task.Run(() => false);
         }
 
         public List<SolicitudIngreso> Get()
@@ -39,16 +47,25 @@ namespace Infraestructure.Services
             return result > 0;
         }
 
-        public Task<bool> UpdateSolicitudIngreso(int id, SolicitudIngreso entidad)
+        public async Task<bool> UpdateSolicitudIngreso(int id, SolicitudIngreso entidad)
         {
             var item = applicationContext.solicitudIngresos.FirstOrDefault(x => x.Id == id);
-            if (item == null) {
-                return Task.Run(()=> false);
+            if (item == null)
+            {
+                return await Task.Run(() => false);
             }
 
+            item.Nombre = entidad.Nombre;
+            item.Apellido = entidad.Apellido;
+            item.Identificacion = entidad.Identificacion;
+            item.IdCasa = entidad.IdCasa;
+            item.Edad = entidad.Edad;
+            var result = await applicationContext.SaveChangesAsync();
 
-            return Task.Run(() => false);
+            return result > 0;
 
         }
+
+
     }
 }

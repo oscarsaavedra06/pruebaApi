@@ -20,5 +20,8 @@ namespace Core.DTO
         [RegularExpression("[1-4]", ErrorMessage = "Opción no válida")]
 
         public int IdCasa { get; set; }
+
+        [Range(0, 99,ErrorMessage ="Ingrese un número de máximo dos dígitos")]
+        public int Edad { get; set; }
     }
 }

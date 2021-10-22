@@ -24,11 +24,11 @@ namespace HogwartsApi.Controllers
             mapper = _mapper;
         }
         [HttpGet]
-        public async Task<ApiResponse<List<SolicitudIngresoDTO>>> get()
+        public async Task<ApiResponse<List<SolicitudIngreso>>> get()
         {
             var items = repo.Get();
-            var itemsDto = mapper.Map<List<SolicitudIngresoDTO>>(items);
-            var response = new ApiResponse<List<SolicitudIngresoDTO>>(itemsDto);
+             
+            var response = new ApiResponse<List<SolicitudIngreso>>(items);
 
             return response;
         }
@@ -45,7 +45,17 @@ namespace HogwartsApi.Controllers
         [HttpPut]
         public async Task<ApiResponse<bool>> put(int id, SolicitudIngresoDTO entidad)
         {
-            var result = await repo.InsertSolicitudIngreso(solicitud);
+            var solicitud = mapper.Map<SolicitudIngreso>(entidad);
+            var result = await repo.UpdateSolicitudIngreso(id, solicitud);
+            var response = new ApiResponse<bool>(result);
+            return response;
+        }
+
+        [HttpDelete]
+        public async Task<ApiResponse<bool>> delete(int id)
+        {
+         
+            var result = await repo.DeleteSolicitudIngreso(id);
             var response = new ApiResponse<bool>(result);
             return response;
         }

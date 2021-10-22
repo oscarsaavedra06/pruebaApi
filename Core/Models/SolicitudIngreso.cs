@@ -23,5 +23,8 @@ namespace Core.Models
         [RegularExpression("[1-4]", ErrorMessage = "Opción no válida")]
        
         public int IdCasa { get; set; }
+        
+        [Range(0,99)]
+        public int Edad { get; set; }
     }
 }
